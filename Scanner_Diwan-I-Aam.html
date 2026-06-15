@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diwan-i-Aam – Hall of Public Audience</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background:#e8dcc4;
+    color:#333;
+    line-height:1.9;
+}
+
+header{
+    background:#8c2d19;
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+.audio-buttons{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.audio-buttons button{
+    background:#8c2d19;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    margin:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.audio-buttons button:hover{
+    background:#6f2011;
+}
+
+.content-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-box p{
+    margin-bottom:20px;
+    font-size:1.08rem;
+}
+
+.image-section{
+    margin-top:45px;
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.image-card{
+    flex:1;
+    min-width:320px;
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.image-label{
+    background:#c9a227;
+    color:#222;
+    text-align:center;
+    padding:14px;
+    font-weight:600;
+    font-size:1.05rem;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:1.4rem;
+}
+
+.content-box{
+    padding:22px;
+}
+
+.image-card img{
+    height:250px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+   <h1>DIWAN-I-AAM – HALL OF PUBLIC AUDIENCE</h1>
+</header>
+
+<div class="container">
+
+    <div class="audio-buttons">
+        <button onclick="toggleEnglish()">
+            🔊 Listen in English
+        </button>
+
+        <button onclick="toggleHindi()">
+            🔊 हिंदी में सुनें
+        </button>
+    </div>
+
+    <div class="content-box">
+
+        <p>
+            You are standing in the Diwan-i-Aam, or Hall of Public Audience, one of the most important spaces within the Red Fort. Built by Emperor Shah Jahan in the mid-17th century, this grand hall was where the Mughal emperor met common citizens, heard petitions, settled disputes, and addressed matters of governance.
+
+        </p>
+
+        <p>
+            The hall was designed with elegant red sandstone columns and a series of arches that created an impressive yet accessible setting for public interaction. At the far end stood the emperor's marble throne canopy, where Shah Jahan and his successors would sit while listening to the concerns of their subjects.
+
+        </p>
+
+        <p>
+            The Diwan-i-Aam symbolized the emperor's role as a just ruler and served as the administrative heart of the Mughal Empire.
+
+        </p>
+
+        <p>
+            Imagine hundreds of citizens, nobles, soldiers, and officials gathered here, waiting for an audience with one of the most powerful rulers in the world.
+
+        </p>
+
+    </div>
+
+    <div class="image-section">
+
+        <div class="image-card">
+            <img src="Ov_Diwan-I-Aam.jpg" alt="Earlier Appearance">
+            <div class="image-label">
+                Earlier Appearance
+            </div>
+        </div>
+
+        <div class="image-card">
+            <img src="Cr_Diwan-I-Aam.jpg" alt="Current Appearance">
+            <div class="image-label">
+                Current Appearance
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let englishPlaying = false;
+let hindiPlaying = false;
+
+const englishText = `
+You are standing in the Diwan-i-Aam, or Hall of Public Audience, one of the most important spaces within the Red Fort. Built by Emperor Shah Jahan in the mid-seventeenth century, this grand hall was where the Mughal emperor met common citizens, heard petitions, settled disputes, and addressed matters of governance.
+
+The hall was designed with elegant red sandstone columns and a series of arches that created an impressive yet accessible setting for public interaction. At the far end stood the emperor's marble throne canopy, where Shah Jahan and his successors would sit while listening to the concerns of their subjects.
+
+The Diwan-i-Aam symbolized the emperor's role as a just ruler and served as the administrative heart of the Mughal Empire.
+
+Imagine hundreds of citizens, nobles, soldiers, and officials gathered here, waiting for an audience with one of the most powerful rulers in the world.
+`;
+
+const hindiText = `
+आप दीवान-ए-आम, अर्थात् जनसाधारण के दरबार में खड़े हैं, जो लाल किले के सबसे महत्वपूर्ण स्थलों में से एक है। इसका निर्माण सत्रहवीं शताब्दी के मध्य में सम्राट शाहजहाँ द्वारा करवाया गया था। यह वह स्थान था जहाँ मुगल सम्राट आम जनता से मिलते थे, उनकी अर्जियाँ सुनते थे, विवादों का निपटारा करते थे और शासन से जुड़े महत्वपूर्ण मामलों पर विचार करते थे।
+
+इस भव्य सभा भवन को लाल बलुआ पत्थर के सुंदर स्तंभों और मेहराबों से सजाया गया था, जो इसे प्रभावशाली होने के साथ-साथ जनता के लिए सुलभ भी बनाते थे। इसके अंतिम भाग में संगमरमर का शाही सिंहासन मंडप स्थित था, जहाँ शाहजहाँ और उनके उत्तराधिकारी बैठकर अपनी प्रजा की समस्याएँ सुनते थे।
+
+दीवान-ए-आम सम्राट की न्यायप्रियता का प्रतीक था और मुगल साम्राज्य के प्रशासनिक केंद्र के रूप में कार्य करता था।
+
+कल्पना कीजिए कि यहाँ सैकड़ों नागरिक, दरबारी, सैनिक और अधिकारी एकत्रित हैं, जो संसार के सबसे शक्तिशाली शासकों में से एक से मिलने की प्रतीक्षा कर रहे हैं।
+`;
+
+function stopSpeech(){
+    speechSynthesis.cancel();
+    englishPlaying = false;
+    hindiPlaying = false;
+}
+
+function toggleEnglish(){
+
+    if(englishPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(englishText);
+    speech.lang = "en-US";
+
+    speech.onend = () => {
+        englishPlaying = false;
+    };
+
+    englishPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+function toggleHindi(){
+
+    if(hindiPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(hindiText);
+    speech.lang = "hi-IN";
+
+    speech.onend = () => {
+        hindiPlaying = false;
+    };
+
+    hindiPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+</html>

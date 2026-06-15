@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fort Walls – Guardians of the Red Fort</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background:#e8dcc4;
+    color:#333;
+    line-height:1.9;
+}
+
+header{
+    background:#8c2d19;
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+.audio-buttons{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.audio-buttons button{
+    background:#8c2d19;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    margin:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.audio-buttons button:hover{
+    background:#6f2011;
+}
+
+.content-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-box p{
+    margin-bottom:20px;
+    font-size:1.08rem;
+}
+
+.image-section{
+    margin-top:45px;
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.image-card{
+    flex:1;
+    min-width:320px;
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.image-label{
+    background:#c9a227;
+    color:#222;
+    text-align:center;
+    padding:14px;
+    font-weight:600;
+    font-size:1.05rem;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:1.4rem;
+}
+
+.content-box{
+    padding:22px;
+}
+
+.image-card img{
+    height:250px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+   <h1>FORT WALLS – GUARDIANS OF THE RED FORT</h1>
+</header>
+
+<div class="container">
+
+    <div class="audio-buttons">
+        <button onclick="toggleEnglish()">
+            🔊 Listen in English
+        </button>
+
+        <button onclick="toggleHindi()">
+            🔊 हिंदी में सुनें
+        </button>
+    </div>
+
+    <div class="content-box">
+           <p>
+            Standing before the massive fort walls of the Red Fort, you are witnessing one of the most impressive defensive structures of the Mughal Empire. Built between 1638 and 1648 under Emperor Shah Jahan, these towering red sandstone walls were designed to protect the imperial palace complex and symbolize the power of the Mughal rulers. Stretching for over two kilometers around the fort, the walls vary in height, reaching up to 33 meters on the side facing the city.   
+
+        </p>
+
+           <p>
+            Beyond their defensive purpose, the walls were also a statement of architectural grandeur. Their imposing appearance was intended to inspire awe among visitors and demonstrate the strength and prestige of the empire. The walls were supported by bastions, watchtowers, and a moat that added additional layers of protection against potential attacks.  
+
+        </p>
+
+        <p>
+            Over the centuries, these walls have witnessed some of the most significant events in Indian history, including the rise and decline of the Mughal Empire, the Revolt of 1857, British colonial rule, and India's independence in 1947. Despite the passage of time, the fort walls continue to stand as a symbol of resilience, heritage, and national pride.  
+
+        </p>
+
+        <p>
+           As you look at the vast stretches of red sandstone before you, imagine royal processions passing through the fort, guards patrolling the ramparts, and the bustling imperial capital that once thrived behind these protective walls. Today, these fortifications remain one of the most recognizable features of the Red Fort and an enduring reminder of India's rich historical legacy. 
+
+        </p>
+
+    </div>
+
+    <div class="image-section">
+
+        <div class="image-card">
+            <img src="Ov_Fortwalls.jpg" alt="Earlier Appearance">
+            <div class="image-label">
+                Earlier Appearance
+            </div>
+        </div>
+
+        <div class="image-card">
+            <img src="Cr_Fortwalls.jpg" alt="Current Appearance">
+            <div class="image-label">
+                Current Appearance
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let englishPlaying = false;
+let hindiPlaying = false;
+
+const englishText = `
+Standing before the massive fort walls of the Red Fort, you are witnessing one of the most impressive defensive structures of the Mughal Empire. Built between 1638 and 1648 under Emperor Shah Jahan, these towering red sandstone walls were designed to protect the imperial palace complex and symbolize the power of the Mughal rulers.
+
+Beyond their defensive purpose, the walls were also a statement of architectural grandeur. Their imposing appearance was intended to inspire awe among visitors and demonstrate the strength and prestige of the empire.
+
+Over the centuries, these walls have witnessed some of the most significant events in Indian history, including the rise and decline of the Mughal Empire, the Revolt of 1857, British colonial rule, and India's independence in 1947.
+
+Today, these fortifications remain one of the most recognizable features of the Red Fort and an enduring reminder of India's rich historical legacy.
+`;
+
+const hindiText = `
+आप लाल किले की विशाल प्राचीरों के सामने खड़े हैं, जो मुगल साम्राज्य की सबसे प्रभावशाली रक्षात्मक संरचनाओं में से एक हैं। इन दीवारों का निर्माण 1638 से 1648 के बीच सम्राट शाहजहाँ के शासनकाल में किया गया था।
+
+लाल बलुआ पत्थर से निर्मित ये ऊँची दीवारें शाही महल परिसर की सुरक्षा के लिए बनाई गई थीं और मुगल साम्राज्य की शक्ति का प्रतीक थीं।
+
+इन दीवारों ने मुगल साम्राज्य के उत्थान और पतन, 1857 के विद्रोह, ब्रिटिश शासन और 1947 में भारत की स्वतंत्रता जैसे अनेक ऐतिहासिक घटनाओं को देखा है।
+
+आज भी ये प्राचीर भारत की विरासत, दृढ़ता और राष्ट्रीय गौरव का प्रतीक बनी हुई हैं।
+`;
+
+function stopSpeech(){
+    speechSynthesis.cancel();
+    englishPlaying = false;
+    hindiPlaying = false;
+}
+
+function toggleEnglish(){
+
+    if(englishPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(englishText);
+    speech.lang = "en-US";
+
+    speech.onend = () => {
+        englishPlaying = false;
+    };
+
+    englishPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+function toggleHindi(){
+
+    if(hindiPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(hindiText);
+    speech.lang = "hi-IN";
+
+    speech.onend = () => {
+        hindiPlaying = false;
+    };
+
+    hindiPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+</html>

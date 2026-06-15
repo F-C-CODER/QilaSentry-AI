@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nahr-i-Bihisht – Stream of Paradise</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background:#e8dcc4;
+    color:#333;
+    line-height:1.9;
+}
+
+header{
+    background:#8c2d19;
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+.audio-buttons{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.audio-buttons button{
+    background:#8c2d19;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    margin:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.audio-buttons button:hover{
+    background:#6f2011;
+}
+
+.content-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-box p{
+    margin-bottom:20px;
+    font-size:1.08rem;
+}
+
+.image-section{
+    margin-top:45px;
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.image-card{
+    flex:1;
+    min-width:320px;
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.image-label{
+    background:#c9a227;
+    color:#222;
+    text-align:center;
+    padding:14px;
+    font-weight:600;
+    font-size:1.05rem;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:1.4rem;
+}
+
+.content-box{
+    padding:22px;
+}
+
+.image-card img{
+    height:250px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>NAHR-I-BIHISHT – STREAM OF PARADISE</h1>
+</header>
+
+<div class="container">
+
+    <div class="audio-buttons">
+        <button onclick="toggleEnglish()">
+            🔊 Listen in English
+        </button>
+
+        <button onclick="toggleHindi()">
+            🔊 हिंदी में सुनें
+        </button>
+    </div>
+
+    <div class="content-box">
+           <div class="content-box">
+
+<div class="content-box">
+
+<p>
+You are standing near the Nahr-i-Bihisht, which translates to the "Stream of Paradise." This elegant water channel was one of the most remarkable features of the Red Fort and formed the heart of the emperor's private palace complex. During the reign of Shah Jahan, water from the Yamuna River was lifted through an advanced hydraulic system at the Shahi Burj and directed into this channel, allowing it to flow through the royal apartments, gardens, and pavilions.
+</p>
+
+<p>
+The Nahr-i-Bihisht was much more than a source of water. It was designed to symbolize the rivers of paradise described in Islamic tradition and played a central role in creating a peaceful and luxurious environment for the Mughal court. As the cool water flowed through marble channels, it helped regulate temperature, enhanced the beauty of the palaces, and created a soothing atmosphere with the gentle sound of running water.
+</p>
+
+<p>
+Many of the most important structures of the Red Fort, including the Khas Mahal, Rang Mahal, and Diwan-i-Khas, were connected by this stream. At its peak, the flowing water reflected sunlight, marble surfaces, and intricate decorations, creating an experience that impressed visitors from around the world.
+</p>
+
+<p>
+Even today, the remains of the Nahr-i-Bihisht offer a glimpse into the engineering brilliance, artistic vision, and refined lifestyle of the Mughal Empire.
+</p>
+
+</div>
+
+</div>
+
+    </div>
+
+    <div class="image-section">
+
+        <div class="image-card">
+            <img src="Ov_Nahr-I-Bihisht.jpg" alt="Earlier Appearance">
+            <div class="image-label">
+                Earlier Appearance
+            </div>
+        </div>
+
+        <div class="image-card">
+            <img src="Cr_Nahr-I-Bihisht.jpg" alt="Current Appearance">
+            <div class="image-label">
+                Current Appearance
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let englishPlaying = false;
+let hindiPlaying = false;
+
+const englishText = `
+You are standing near the Nahr-i-Bihisht, which translates to the Stream of Paradise. This elegant water channel was one of the most remarkable features of the Red Fort and formed the heart of the emperor's private palace complex.
+
+During the reign of Shah Jahan, water from the Yamuna River was lifted through an advanced hydraulic system at the Shahi Burj and directed into this channel, allowing it to flow through the royal apartments, gardens, and pavilions.
+
+The Nahr-i-Bihisht was much more than a source of water. It was designed to symbolize the rivers of paradise described in Islamic tradition and played a central role in creating a peaceful and luxurious environment for the Mughal court.
+
+As the cool water flowed through marble channels, it helped regulate temperature, enhanced the beauty of the palaces, and created a soothing atmosphere with the gentle sound of running water.
+
+Many of the most important structures of the Red Fort, including the Khas Mahal, Rang Mahal, and Diwan-i-Khas, were connected by this stream. At its peak, the flowing water reflected sunlight, marble surfaces, and intricate decorations, creating an experience that impressed visitors from around the world.
+
+Even today, the remains of the Nahr-i-Bihisht offer a glimpse into the engineering brilliance, artistic vision, and refined lifestyle of the Mughal Empire.
+`;
+
+
+const hindiText = `
+आप नहर-ए-बिहिश्त के पास खड़े हैं, जिसका अर्थ है स्वर्ग की धारा। यह सुंदर जलधारा लाल किले की सबसे अद्भुत विशेषताओं में से एक थी और सम्राट के निजी महल परिसर का केंद्र मानी जाती थी।
+
+शाहजहाँ के शासनकाल में यमुना नदी का जल शाही बुर्ज में स्थापित एक उन्नत जल-प्रणाली द्वारा ऊपर उठाया जाता था और इस नहर में प्रवाहित किया जाता था। इसके बाद यह जल शाही कक्षों, उद्यानों और मंडपों से होकर बहता था।
+
+नहर-ए-बिहिश्त केवल जल का स्रोत नहीं थी। इसे इस्लामी परंपरा में वर्णित स्वर्ग की नदियों के प्रतीक के रूप में बनाया गया था और यह मुगल दरबार के लिए शांतिपूर्ण तथा विलासपूर्ण वातावरण तैयार करने में महत्वपूर्ण भूमिका निभाती थी।
+
+संगमरमर की नालियों से बहता ठंडा जल वातावरण को शीतल बनाता था, महलों की सुंदरता को बढ़ाता था और बहते पानी की मधुर ध्वनि से एक सुखद अनुभव प्रदान करता था।
+
+लाल किले की कई महत्वपूर्ण इमारतें, जैसे खास महल, रंग महल और दीवान-ए-खास, इसी जलधारा से जुड़ी हुई थीं। अपने स्वर्णिम काल में यह बहता जल सूर्य के प्रकाश, संगमरमर की सतहों और सुंदर सजावटों को प्रतिबिंबित करता था, जिससे आने वाले आगंतुक अत्यंत प्रभावित होते थे।
+
+आज भी नहर-ए-बिहिश्त के अवशेष मुगल साम्राज्य की अद्भुत अभियांत्रिकी, कलात्मक दृष्टि और परिष्कृत जीवनशैली की झलक प्रस्तुत करते हैं।
+`;
+
+
+function stopSpeech(){
+    speechSynthesis.cancel();
+    englishPlaying = false;
+    hindiPlaying = false;
+}
+
+function toggleEnglish(){
+
+    if(englishPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(englishText);
+    speech.lang = "en-US";
+
+    speech.onend = () => {
+        englishPlaying = false;
+    };
+
+    englishPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+function toggleHindi(){
+
+    if(hindiPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(hindiText);
+    speech.lang = "hi-IN";
+
+    speech.onend = () => {
+        hindiPlaying = false;
+    };
+
+    hindiPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+</html>

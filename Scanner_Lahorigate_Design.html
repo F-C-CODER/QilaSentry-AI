@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lahori Gate – Gateway to the Mughal Empire</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background:#e8dcc4;
+    color:#333;
+    line-height:1.9;
+}
+
+header{
+    background:#8c2d19;
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+.audio-buttons{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.audio-buttons button{
+    background:#8c2d19;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    margin:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.audio-buttons button:hover{
+    background:#6f2011;
+}
+
+.content-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-box p{
+    margin-bottom:20px;
+    font-size:1.08rem;
+}
+
+.image-section{
+    margin-top:45px;
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.image-card{
+    flex:1;
+    min-width:320px;
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.image-label{
+    background:#c9a227;
+    color:#222;
+    text-align:center;
+    padding:14px;
+    font-weight:600;
+    font-size:1.05rem;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:1.4rem;
+}
+
+.content-box{
+    padding:22px;
+}
+
+.image-card img{
+    height:250px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>LAHORI GATE – GATEWAY TO THE MUGHAL EMPIRE</h1>
+</header>
+
+<div class="container">
+
+    <div class="audio-buttons">
+        <button onclick="toggleEnglish()">
+            🔊 Listen in English
+        </button>
+
+        <button onclick="toggleHindi()">
+            🔊 हिंदी में सुनें
+        </button>
+    </div>
+
+    <div class="content-box">
+
+        <p>
+            As you stand before the Lahori Gate, you are looking at the grand entrance to the Red Fort, one of the most significant monuments of the Mughal Empire. Built in 1648 by Emperor Shah Jahan, this gate served as the primary gateway through which emperors, nobles, merchants, and foreign visitors entered the imperial complex. The gate gets its name from its orientation toward Lahore, which was one of the most important cities of the Mughal Empire at the time.
+        </p>
+
+        <p>
+            Constructed from red sandstone, the Lahori Gate was designed to showcase the power and magnificence of the Mughal rulers while also serving as a strong defensive structure. Beyond this gateway lay bustling markets, royal residences, audience halls, and beautifully landscaped gardens that formed the heart of the imperial capital of Shahjahanabad.
+        </p>
+
+        <p>
+            Over the centuries, the Lahori Gate has witnessed some of the most important events in Indian history, including the rise and decline of the Mughal Empire, the period of British rule, and the birth of independent India. Today, it stands not only as an architectural masterpiece but also as a national symbol. Every year on Independence Day, the Red Fort becomes the center of national celebrations, connecting this historic gateway to the story of modern India.
+        </p>
+
+        <p>
+            As you observe the massive walls and towering structure around you, imagine the royal processions, soldiers, traders, and travelers who once passed through this very entrance, making it one of the most important gateways in India's history.
+        </p>
+
+    </div>
+
+    <div class="image-section">
+
+        <div class="image-card">
+            <img src="Ov_Lahorigate.jpg" alt="Earlier Appearance">
+            <div class="image-label">
+                Earlier Appearance
+            </div>
+        </div>
+
+        <div class="image-card">
+            <img src="Cr_Lahorigate.jpg" alt="Current Appearance">
+            <div class="image-label">
+                Current Appearance
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let englishPlaying = false;
+let hindiPlaying = false;
+
+const englishText = `
+As you stand before the Lahori Gate, you are looking at the grand entrance to the Red Fort, one of the most significant monuments of the Mughal Empire. Built in 1648 by Emperor Shah Jahan, this gate served as the primary gateway through which emperors, nobles, merchants, and foreign visitors entered the imperial complex.
+
+Constructed from red sandstone, the Lahori Gate was designed to showcase the power and magnificence of the Mughal rulers while also serving as a strong defensive structure.
+
+Over the centuries, the Lahori Gate has witnessed some of the most important events in Indian history and today remains a symbol of India's heritage and national identity.
+`;
+
+const hindiText = `
+आप लाहौरी गेट के सामने खड़े हैं, जो लाल किले का भव्य प्रवेश द्वार है। इसे 1648 में सम्राट शाहजहाँ ने बनवाया था।
+
+लाल बलुआ पत्थर से निर्मित यह द्वार मुगल साम्राज्य की शक्ति और वैभव का प्रतीक था।
+
+आज यह भारत की ऐतिहासिक विरासत और राष्ट्रीय गौरव का एक महत्वपूर्ण प्रतीक है।
+`;
+
+function stopSpeech(){
+    speechSynthesis.cancel();
+    englishPlaying = false;
+    hindiPlaying = false;
+}
+
+function toggleEnglish(){
+
+    if(englishPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(englishText);
+    speech.lang = "en-US";
+
+    speech.onend = () => {
+        englishPlaying = false;
+    };
+
+    englishPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+function toggleHindi(){
+
+    if(hindiPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(hindiText);
+    speech.lang = "hi-IN";
+
+    speech.onend = () => {
+        hindiPlaying = false;
+    };
+
+    hindiPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+</html>

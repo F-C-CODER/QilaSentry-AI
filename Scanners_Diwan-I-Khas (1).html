@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diwan-i-Khas – Hall of Private Audience</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background:#e8dcc4;
+    color:#333;
+    line-height:1.9;
+}
+
+header{
+    background:#8c2d19;
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+.audio-buttons{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.audio-buttons button{
+    background:#8c2d19;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    margin:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.audio-buttons button:hover{
+    background:#6f2011;
+}
+
+.content-box{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-box p{
+    margin-bottom:20px;
+    font-size:1.08rem;
+}
+
+.image-section{
+    margin-top:45px;
+    display:flex;
+    gap:25px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.image-card{
+    flex:1;
+    min-width:320px;
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    display:block;
+}
+
+.image-label{
+    background:#c9a227;
+    color:#222;
+    text-align:center;
+    padding:14px;
+    font-weight:600;
+    font-size:1.05rem;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:1.4rem;
+}
+
+.content-box{
+    padding:22px;
+}
+
+.image-card img{
+    height:250px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+   <h1>DIWAN-I-KHAS – HALL OF PRIVATE AUDIENCE</h1>
+</header>
+
+<div class="container">
+
+    <div class="audio-buttons">
+        <button onclick="toggleEnglish()">
+            🔊 Listen in English
+        </button>
+
+        <button onclick="toggleHindi()">
+            🔊 हिंदी में सुनें
+        </button>
+    </div>
+
+    <div class="content-box">
+           <div class="content-box">
+
+<p>
+You are now at the Diwan-i-Khas, the Hall of Private Audience, one of the most luxurious and exclusive spaces within the Red Fort. Constructed in 1648, this magnificent marble pavilion was reserved for meetings between the Mughal emperor, royal family members, high-ranking nobles, foreign ambassadors, and distinguished guests.
+</p>
+
+<p>
+Unlike the public atmosphere of the Diwan-i-Aam, only a select few were permitted to enter this hall. The structure was once adorned with gold, silver, precious stones, and intricate floral inlay work.
+</p>
+
+<p>
+The famous Peacock Throne, regarded as one of the most extravagant thrones ever created, originally stood here. Through the center of the hall flowed the Nahr-i-Bihisht, or "Stream of Paradise," enhancing its beauty and cooling the surroundings.
+</p>
+
+<p>
+Above its arches is the famous inscription: "If there is a paradise on earth, it is this, it is this, it is this."
+</p>
+
+<p>
+Standing here today offers a glimpse into the immense wealth, refinement, and artistic brilliance of the Mughal court at its peak.
+</p>
+
+</div>
+
+    </div>
+
+    <div class="image-section">
+
+        <div class="image-card">
+            <img src="Ov_Diwan-I-Khas.jpg" alt="Earlier Appearance">
+            <div class="image-label">
+                Earlier Appearance
+            </div>
+        </div>
+
+        <div class="image-card">
+            <img src="Cr_Diwan-I-Khas.jpg" alt="Current Appearance">
+            <div class="image-label">
+                Current Appearance
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let englishPlaying = false;
+let hindiPlaying = false;
+
+const englishText = `
+You are now at the Diwan-i-Khas, the Hall of Private Audience, one of the most luxurious and exclusive spaces within the Red Fort. Constructed in 1648, this magnificent marble pavilion was reserved for meetings between the Mughal emperor, royal family members, high-ranking nobles, foreign ambassadors, and distinguished guests.
+
+Unlike the public atmosphere of the Diwan-i-Aam, only a select few were permitted to enter this hall. The structure was once adorned with gold, silver, precious stones, and intricate floral inlay work.
+
+The famous Peacock Throne, regarded as one of the most extravagant thrones ever created, originally stood here. Through the center of the hall flowed the Nahr-i-Bihisht, or Stream of Paradise, enhancing its beauty and cooling the surroundings.
+
+Above its arches is the famous inscription: If there is a paradise on earth, it is this, it is this, it is this.
+
+Standing here today offers a glimpse into the immense wealth, refinement, and artistic brilliance of the Mughal court at its peak.
+`;
+
+const hindiText = `
+आप अब दीवान-ए-खास में खड़े हैं, जिसे निजी दरबार या Hall of Private Audience कहा जाता है। यह लाल किले के सबसे भव्य और विशिष्ट स्थलों में से एक है। इसका निर्माण 1648 में किया गया था और यह संगमरमर का शानदार मंडप मुगल सम्राट, शाही परिवार के सदस्यों, उच्च पदस्थ दरबारियों, विदेशी राजदूतों और विशिष्ट अतिथियों के लिए आरक्षित था।
+
+दीवान-ए-आम के सार्वजनिक वातावरण के विपरीत, इस स्थान में केवल चुनिंदा लोगों को प्रवेश की अनुमति थी। यह भवन कभी सोने, चाँदी, बहुमूल्य रत्नों और सुंदर पुष्पीय जड़ाऊ कलाकृतियों से सजाया गया था।
+
+विश्व के सबसे भव्य सिंहासनों में से एक माने जाने वाला प्रसिद्ध मयूर सिंहासन यहीं स्थापित था। सभा भवन के मध्य से नहर-ए-बिहिश्त, अर्थात् स्वर्ग की धारा, बहती थी, जो इसकी सुंदरता बढ़ाने के साथ-साथ वातावरण को शीतल भी बनाती थी।
+
+इसकी मेहराबों के ऊपर अंकित प्रसिद्ध पंक्ति है – यदि पृथ्वी पर कहीं स्वर्ग है, तो यहीं है, यहीं है, यहीं है।
+
+आज यहाँ खड़े होकर आप मुगल दरबार की अपार संपन्नता, उत्कृष्ट कला और अद्वितीय वैभव की झलक प्राप्त कर सकते हैं।
+`;
+
+function stopSpeech(){
+    speechSynthesis.cancel();
+    englishPlaying = false;
+    hindiPlaying = false;
+}
+
+function toggleEnglish(){
+
+    if(englishPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(englishText);
+    speech.lang = "en-US";
+
+    speech.onend = () => {
+        englishPlaying = false;
+    };
+
+    englishPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+function toggleHindi(){
+
+    if(hindiPlaying){
+        stopSpeech();
+        return;
+    }
+
+    stopSpeech();
+
+    let speech = new SpeechSynthesisUtterance(hindiText);
+    speech.lang = "hi-IN";
+
+    speech.onend = () => {
+        hindiPlaying = false;
+    };
+
+    hindiPlaying = true;
+    speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+</html>
